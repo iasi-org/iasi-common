@@ -9,7 +9,7 @@
 /_book/
 
 # Salida personalizada que utilizaremos
-/outputs/
+/_outputs/
 
 # Configuración local y posibles secretos
 /_*.local
@@ -70,3 +70,6 @@ _cache/
 
 # Logs
 *.log
+
+# Codex
+.codex*
