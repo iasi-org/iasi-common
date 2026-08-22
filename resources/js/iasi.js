@@ -40,31 +40,32 @@ async function setupExportsMenu() {
     const exports = Array.isArray(data.exports) ? data.exports : [];
 
     for (const entry of exports) {
-      const newItem = markerItem.cloneNode(true);
-      const link = newItem.querySelector("a");
-      const text = newItem.querySelector(".dropdown-text");
+         const newItem = markerItem.cloneNode(true);
+         const link = newItem.querySelector("a");
+         const text = newItem.querySelector(".dropdown-text");
 
-      const href = new URL(entry.href, exportsUrl).href;
+         const href = new URL(entry.href, exportsUrl).href;
 
-      link.href = href;
-      link.dataset.originalHref = href;
+         link.href = href;
+         link.dataset.originalHref = href;
 
-      if (text) {
-        text.textContent = "";
+         if (text) {
+            text.textContent = entry.text;
 
-        if (entry.icon) {
-          const icon = document.createElement("i");
-          icon.className = `bi bi-${entry.icon} me-2`;
-          icon.setAttribute("aria-hidden", "true");
-          text.appendChild(icon);
-        }
+            if (entry.icon) {
+                const icon = document.createElement("i");
 
-        text.appendChild(document.createTextNode(entry.text));
-      }
+                icon.className = `bi bi-${entry.icon}`;
+                icon.setAttribute("aria-hidden", "true");
 
-      menu.insertBefore(newItem, markerItem);
+                link.insertBefore(icon, text);
+                link.insertBefore(document.createTextNode(" "), text);
+            }
+         }
+
+         menu.insertBefore(newItem, markerItem);
     }
-
+    
     markerItem.remove();
   } catch {
     return;
