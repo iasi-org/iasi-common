@@ -4,7 +4,7 @@
 
 > Estándares, plantillas y convenciones compartidas del ecosistema IASI.
 
-`iasi-standards` forma parte del ecosistema **IASI (Ingeniería Asistida por Sistemas Inteligentes)**.
+`iasi-standards` forma parte del ecosistema **IASI (Ingeniería Aumentada por Sistemas Inteligentes)**.
 
 Este repositorio no contiene software.
 
